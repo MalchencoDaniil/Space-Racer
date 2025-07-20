@@ -25,14 +25,14 @@ public class FlyingPopup : Popup
     {
         Sequence _animation = DOTween.Sequence();
 
-        Vector2 _startPosition = _targetBody.anchoredPosition;
+        Vector2 _targetPosition = _targetBody.anchoredPosition;
 
-        Vector2 _firstPosition = new Vector2(_startPosition.x, -Screen.height / 3);
-        Vector2 _secondPosition = new Vector2(_startPosition.x, -Screen.height / 4);
+        // Чуть дальше таргета (например, на 100 пикселей выше)
+        Vector2 _overshootPosition = _targetPosition - new Vector2(0, 100f);
 
-        _animation
-            .Append(_body.DOFade(1, _fadeDuration))
-            .Join(_body.rectTransform.DOAnchorPos(_firstPosition, _moveSpeed).From(_startPosition))
-            .Append(_body.rectTransform.DOAnchorPos(_secondPosition, _moveSpeed * 2).From(_firstPosition));
+        _body.rectTransform.anchoredPosition = _bodyStartPosition;
+        _body.color = _popupStartColor;
+
+        _animation.Append(_body.DOFade(1, _fadeDuration)).Join(_body.rectTransform.DOAnchorPos(_overshootPosition, _moveSpeed)).Append(_body.rectTransform.DOAnchorPos(_targetPosition, _moveSpeed * 0.5f));
     }
 }

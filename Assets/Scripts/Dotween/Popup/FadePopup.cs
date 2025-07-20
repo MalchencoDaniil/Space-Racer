@@ -4,8 +4,7 @@ using UnityEngine.UI;
 
 public class FadePopup : Popup
 {
-    [SerializeField]
-    private Image _body;
+    [SerializeField] private Image _body;
 
     public override void Show(float _duration)
     {
