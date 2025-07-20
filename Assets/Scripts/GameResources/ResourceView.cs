@@ -15,6 +15,7 @@ public class ResourceView : MonoBehaviour
     public void Construct(IResourceService resourceService)
     {
         _resourceService = resourceService;
+        // ResourceFormatSingleton
     }
 
     private void Start()
@@ -28,15 +29,10 @@ public class ResourceView : MonoBehaviour
         UpdateText();
     }
 
-    private string Format(int _amount)
-    {
-        return _amount >= 1000 ? (_amount / 1000) + "k" : _amount.ToString();
-    }
-
     public void UpdateText()
     {
-        _coinText.text = Format(_resourceService.GetResource(ResourceType.Coin).Amount);
-        _diamondText.text = Format(_resourceService.GetResource(ResourceType.Diamond).Amount);
+        _coinText.text = ResourceFormatSingleton.Format(_resourceService.GetResource(ResourceType.Coin).Amount);
+        _diamondText.text = ResourceFormatSingleton.Format(_resourceService.GetResource(ResourceType.Diamond).Amount);
     }
 
     private void OnDestroy()

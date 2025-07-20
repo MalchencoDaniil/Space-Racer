@@ -65,11 +65,6 @@ public class ShopView : MonoBehaviour
         _buttonBody.sprite = _buySprite;
         _resourceIconImage.gameObject.SetActive(true);
 
-        _buttonText.text = Format(_price).ToString();
-    }
-
-    private string Format(int _amount)
-    {
-        return _amount >= 1000 ? (_amount / 1000) + "k" : _amount.ToString();
+        _buttonText.text = ResourceFormatSingleton.Format(_price).ToString();
     }
 }
