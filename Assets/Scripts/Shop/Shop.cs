@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -13,6 +12,14 @@ public class Shop : MonoBehaviour
     private void Awake()
     {
         _shopView = FindObjectOfType<ShopView>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PlayerPrefs.DeleteAll();
+        }
     }
 
     public void Initialize()
@@ -83,8 +90,25 @@ public class Shop : MonoBehaviour
         UpdateView();
     }
 
+    public void Buy()
+    {
+        CharacterSkinItem _buySkin = _shopContent.CharacterSkinItems.ElementAt(_shopModel.CurrentCharacterID);
+
+        if (_buySkin._canBuy)
+            return;
+
+        PlayerPrefs.SetInt($"SkinBought_{_buySkin.SkinType.ToString()}", 1);
+
+        _buySkin._canBuy = true;
+
+        UpdateView();
+    }
+
     public void Select()
     {
+        if (!_shopContent.CharacterSkinItems.ElementAt(_shopModel.CurrentCharacterID)._canBuy)
+            return;
+
         PlayerPrefs.SetInt(ShopPrefsNames.SelectedCharacterID, _shopModel.CurrentCharacterID);
         _shopModel.SelectedCharacterID = _shopModel.CurrentCharacterID;
 
@@ -97,6 +121,6 @@ public class Shop : MonoBehaviour
 
         var _name = _skin.SkinType.ToString();
         _shopView.SetSkinName(_name);
-        _shopView.ButtonUpdate(_shopModel.CurrentCharacterID == _shopModel.SelectedCharacterID);
+        _shopView.ButtonUpdate(_shopModel.CurrentCharacterID == _shopModel.SelectedCharacterID, _skin._canBuy, _skin.Price);
     }
 }

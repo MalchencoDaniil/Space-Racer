@@ -4,4 +4,13 @@ using UnityEngine;
 public class CharacterSkinItem : ShopItem
 {
     [field: SerializeField] public CharacterSkins SkinType { get; private set; }
+    [SerializeField] public bool _canBuy;
+
+    private void OnEnable()
+    {
+        if (SkinType == CharacterSkins.Wing) // Start Plane
+            return;
+
+        _canBuy = PlayerPrefs.GetInt($"SkinBought_{SkinType.ToString()}", 0) == 1;
+    }
 }
