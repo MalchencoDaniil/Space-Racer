@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using Zenject;
 
 public class Shop : MonoBehaviour
 {
@@ -9,9 +10,22 @@ public class Shop : MonoBehaviour
     private ShopModel _shopModel;
     private ShopView _shopView;
 
+    IResource _coin, _diamond;
+
+    private IResourceService _resourceService;
+
+    [Inject]
+    public void Construct(IResourceService resourceService)
+    {
+        _resourceService = resourceService;
+    }
+
     private void Awake()
     {
         _shopView = FindObjectOfType<ShopView>();
+
+        _coin = _resourceService.GetResource(ResourceType.Coin);
+        _diamond = _resourceService.GetResource(ResourceType.Diamond);
     }
 
     private void Update()
@@ -93,15 +107,23 @@ public class Shop : MonoBehaviour
     public void Buy()
     {
         CharacterSkinItem _buySkin = _shopContent.CharacterSkinItems.ElementAt(_shopModel.CurrentCharacterID);
+        IResource _currentResource = CheckResourceType(_buySkin);
 
-        if (_buySkin._canBuy)
-            return;
+        if (!_buySkin._canBuy && _currentResource.TrySpend(_buySkin.Price))
+        {
+            PlayerPrefs.SetInt($"SkinBought_{_buySkin.SkinType}", 1);
+            _buySkin._canBuy = true;
 
-        PlayerPrefs.SetInt($"SkinBought_{_buySkin.SkinType.ToString()}", 1);
+            UpdateView();
+        }
+    }
 
-        _buySkin._canBuy = true;
+    private IResource CheckResourceType(CharacterSkinItem _buySkin)
+    {
+        if (_buySkin.ResourceType == ResourceType.Coin)
+            return _coin;
 
-        UpdateView();
+        return _diamond;
     }
 
     public void Select()
@@ -121,6 +143,6 @@ public class Shop : MonoBehaviour
 
         var _name = _skin.SkinType.ToString();
         _shopView.SetSkinName(_name);
-        _shopView.ButtonUpdate(_shopModel.CurrentCharacterID == _shopModel.SelectedCharacterID, _skin._canBuy, _skin.Price);
+        _shopView.ButtonUpdate(_shopModel.CurrentCharacterID == _shopModel.SelectedCharacterID, _skin._canBuy, _skin.Price, _skin.ResourceType);
     }
 }

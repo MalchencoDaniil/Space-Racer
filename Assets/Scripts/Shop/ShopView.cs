@@ -16,7 +16,9 @@ public class ShopView : MonoBehaviour
     [SerializeField] private Sprite _ownedSprite;
 
     [Space(5)]
-    [SerializeField] private Transform _coinImage;
+    [SerializeField] private Image _resourceIconImage;
+    [SerializeField] private Sprite _diamondSprite;
+    [SerializeField] private Sprite _coinSprite;
 
     public void SetSkinName(string _skinName)
     {
@@ -24,8 +26,18 @@ public class ShopView : MonoBehaviour
     }
 
     // ѕодумать, что можно сделать с текстом
-    public void ButtonUpdate(bool _canSelected, bool _canBuy, float _price)
+    public void ButtonUpdate(bool _canSelected, bool _canBuy, int _price, ResourceType _resourceType)
     {
+        if (_resourceType == ResourceType.Coin)
+        {
+            _resourceIconImage.sprite = _coinSprite;
+        }
+
+        if (_resourceType == ResourceType.Diamond)
+        {
+            _resourceIconImage.sprite = _diamondSprite;
+        }
+
         if (!_canSelected)
         {
             _selectedButton.interactable = true;
@@ -40,19 +52,24 @@ public class ShopView : MonoBehaviour
         BuyCheck(_canBuy, _price);
     }
 
-    private void BuyCheck(bool _canBuy, float _price)
+    private void BuyCheck(bool _canBuy, int _price)
     {
         if (_canBuy)
         {
             Debug.Log("True");
             _buttonBody.sprite = _ownedSprite;
-            _coinImage.gameObject.SetActive(false);
+            _resourceIconImage.gameObject.SetActive(false);
             return;
         }
 
         _buttonBody.sprite = _buySprite;
-        _coinImage.gameObject.SetActive(true);
+        _resourceIconImage.gameObject.SetActive(true);
 
-        _buttonText.text = (_price / 1000).ToString() + "k";
+        _buttonText.text = Format(_price).ToString();
+    }
+
+    private string Format(int _amount)
+    {
+        return _amount >= 1000 ? (_amount / 1000) + "k" : _amount.ToString();
     }
 }
