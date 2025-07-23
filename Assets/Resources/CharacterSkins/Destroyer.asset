@@ -16,5 +16,7 @@ MonoBehaviour:
     type: 3}
   Price: 10
   ResourceType: 1
+  <Player>k__BackingField: {fileID: -2152737065721125354, guid: 5b538e288d2e44e48bfdc0c371306bfe,
+    type: 3}
   <SkinType>k__BackingField: 1
-  _canBuy: 0
+  _canBuy: 1

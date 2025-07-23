@@ -6,12 +6,16 @@ public class Blackscreen : MonoBehaviour
     [SerializeField] private Popup _screenPopup;
     [SerializeField] private float _durationTime = 0.8f;
 
+    public float Duration => _durationTime;
+
     public void OpenBlackScreen() => Open(_durationTime).Forget();
 
     public void CloseBlackScreen() => Close(_durationTime).Forget();
 
     private async UniTaskVoid Open(float _time)
     {
+        _screenPopup.gameObject.SetActive(true);
+
         _screenPopup.Show(_time);
 
         await UniTask.WaitForSeconds(_time);

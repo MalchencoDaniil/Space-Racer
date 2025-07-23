@@ -24,6 +24,8 @@ public class Shop : MonoBehaviour
     {
         _shopView = FindObjectOfType<ShopView>();
 
+        Debug.Log(_coin + " " + _diamond);
+
         _coin = _resourceService.GetResource(ResourceType.Coin);
         _diamond = _resourceService.GetResource(ResourceType.Diamond);
     }
