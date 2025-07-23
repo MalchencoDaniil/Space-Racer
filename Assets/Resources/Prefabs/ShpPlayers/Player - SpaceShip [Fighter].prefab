@@ -261,7 +261,7 @@ MonoBehaviour:
   _maxSpeed: 450
   _accelerationRate: 25
   _distancePerAcceleration: 50
-  _minHorizontalSpeed: 50
+  _minHorizontalSpeed: 100
   _maxHorizontalSpeed: 180
   _horizontalDampening: 0.5
   _body: {fileID: 7661508796903224635}

@@ -2713,15 +2713,10 @@ MonoBehaviour:
     - {fileID: 2304753064301659006, guid: 53e84cb634669174f9e9c1c3adc9bdad, type: 3}
     - {fileID: 570829297862551151, guid: 10eb08cb8a67c8e4f8a0f4b5f7d4f8f3, type: 3}
     - {fileID: 8754320567472124712, guid: cebca8bd0cb9f7a45ba150114f63f4af, type: 3}
-    - {fileID: 6590678572795345988, guid: 47f1b0196074fdc4daaa0c09431240eb, type: 3}
-    - {fileID: 1546769061436801661, guid: 34b6508dacf3d694bae50c50fe334553, type: 3}
   - _colorTheme: {r: 0, g: 0.69803923, b: 1, a: 0}
     FloorTiles:
-    - {fileID: 2304753064301659006, guid: f29259132e0b32e4eb2cc863325a9075, type: 3}
+    - {fileID: 900182640316152424, guid: f29259132e0b32e4eb2cc863325a9075, type: 3}
     - {fileID: 570829297862551151, guid: 5c90f8333c21fe74fb4b9e8b4ee4faf3, type: 3}
-    - {fileID: 8754320567472124712, guid: 5a0f11486069d6543a92aa493776785a, type: 3}
-    - {fileID: 6590678572795345988, guid: e606e0c0d9e1a4944836cc8f3c4c8b07, type: 3}
-    - {fileID: 1546769061436801661, guid: f5977ff5a71d18543861cfc2a96f6fa8, type: 3}
   _distanceToNextBiome: 3000
   _spawnDirection: {x: 0, y: 0, z: 1}
   _spawnTileCount: 3
