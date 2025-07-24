@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 7262981603338170695}
   - component: {fileID: 5118137843831798283}
   - component: {fileID: 8516965285350820135}
+  - component: {fileID: 2108169091757985598}
   m_Layer: 0
   m_Name: 'Player - SpaceShip [Fighter]'
   m_TagString: Untagged
@@ -298,3 +299,15 @@ MonoBehaviour:
     m_Bits: 64
   _dieEffect: {fileID: 6701809830210488493, guid: eb49b59380301264f8aaa3ffb916f777,
     type: 3}
+--- !u!114 &2108169091757985598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5316741796432903350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76bef9c28bf9a5142bba1016e46f3050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _player = GetComponent<Player>();
 
-        _inputHandler = new PlayerInput();
+        _inputHandler = GetComponent<PlayerInput>();
 
         _bodyStartRotation = _body.eulerAngles;
 
