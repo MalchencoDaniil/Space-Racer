@@ -4,6 +4,6 @@ public class GlobalInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
-        Container.Bind<IResourceService>().To<ResourceService>().AsTransient();
+        Container.Bind<IResourceService>().To<ResourceService>().AsSingle();
     }
 }

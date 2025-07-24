@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UnityEvent _dieEvent;
 
     [HideInInspector]
+    public Player _player;
+
+    [HideInInspector]
     public float Distance;
 
     private void Awake()
@@ -15,8 +18,18 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        _player = FindObjectOfType<Player>();
+    }
+
     public void Die()
     {
         _dieEvent?.Invoke();
+    }
+
+    public void DisablePlayer()
+    {
+        _player.gameObject.SetActive(false);
     }
 }
