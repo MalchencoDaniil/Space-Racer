@@ -296,3 +296,5 @@ MonoBehaviour:
   _collisionMask:
     serializedVersion: 2
     m_Bits: 64
+  _dieEffect: {fileID: 6701809830210488493, guid: eb49b59380301264f8aaa3ffb916f777,
+    type: 3}

@@ -6,7 +6,7 @@ public class DiamondResource : ResourceBase
     {
         if (!PlayerPrefs.HasKey("Diamonds"))
         {
-            Amount = 10;
+            Amount = 0;
             Save();
         }
     }

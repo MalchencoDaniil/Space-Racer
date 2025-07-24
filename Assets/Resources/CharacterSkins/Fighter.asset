@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Model>k__BackingField: {fileID: 2748215564316997927, guid: 3ffca03f9a1a04b4a840e23fbf4f611b,
     type: 3}
-  Price: 978
+  Price: 15000
   ResourceType: 0
   <Player>k__BackingField: {fileID: 7262981603338170695, guid: 0765354b27861d44081cc7bcd0c77373,
     type: 3}
   <SkinType>k__BackingField: 2
-  _canBuy: 1
+  _canBuy: 0
