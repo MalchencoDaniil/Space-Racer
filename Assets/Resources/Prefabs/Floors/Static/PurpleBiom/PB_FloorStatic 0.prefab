@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &6148253476364974836
 Transform:
@@ -217,10 +217,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4152984377189788545}
     m_Modifications:
+    - target: {fileID: 1412767805851594918, guid: 986412822fba25242aa1c1317d8d362a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535879022995656865, guid: 986412822fba25242aa1c1317d8d362a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3282438349763804979, guid: 986412822fba25242aa1c1317d8d362a,
         type: 3}
       propertyPath: m_Name
       value: Diamond
+      objectReference: {fileID: 0}
+    - target: {fileID: 3282438349763804979, guid: 986412822fba25242aa1c1317d8d362a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3772200752529990871, guid: 986412822fba25242aa1c1317d8d362a,
         type: 3}
@@ -272,6 +287,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6603826637716062935, guid: 986412822fba25242aa1c1317d8d362a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393919677947368739, guid: 986412822fba25242aa1c1317d8d362a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -291,10 +316,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4152984377189788545}
     m_Modifications:
+    - target: {fileID: 1412767805851594918, guid: 986412822fba25242aa1c1317d8d362a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535879022995656865, guid: 986412822fba25242aa1c1317d8d362a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3282438349763804979, guid: 986412822fba25242aa1c1317d8d362a,
         type: 3}
       propertyPath: m_Name
       value: Diamond (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3282438349763804979, guid: 986412822fba25242aa1c1317d8d362a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3772200752529990871, guid: 986412822fba25242aa1c1317d8d362a,
         type: 3}
@@ -345,6 +385,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603826637716062935, guid: 986412822fba25242aa1c1317d8d362a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393919677947368739, guid: 986412822fba25242aa1c1317d8d362a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

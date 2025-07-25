@@ -3646,7 +3646,7 @@ MonoBehaviour:
   - {fileID: 8754320567472124712, guid: 8cb0b3ad76a171243866f5be0f7a3a37, type: 3}
   - {fileID: 6590678572795345988, guid: 3b152951c09a5274ca4db8b0e7bcc7ac, type: 3}
   - {fileID: 1546769061436801661, guid: ee48cb6b83339bc469e8f96e76021f16, type: 3}
-  <TileLength>k__BackingField: 340
+  <TileLength>k__BackingField: 335
   <StartFloorTileCount>k__BackingField: 3
   _spawnDirection: {x: 1, y: 0, z: 0}
 --- !u!4 &678747592
