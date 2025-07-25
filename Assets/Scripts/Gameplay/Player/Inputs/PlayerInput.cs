@@ -18,31 +18,29 @@ public class PlayerInput : MonoBehaviour
 
     public Vector2 MovementInput()
     {
-        //if (_inputHandler.InputType == InputType.Accelerometer)
-        //    return Input.acceleration;
-        //else
-        //{
-        //    float _horizontalInput = 0f;
+        if (_inputHandler.InputType == InputType.Accelerometer)
+            return Input.acceleration;
+        else
+        {
+            float _horizontalInput = 0f;
 
-        //    if (Input.touchCount > 0)
-        //    {
-        //        Touch _touch = Input.GetTouch(0);
+            if (Input.touchCount > 0)
+            {
+                Touch _touch = Input.GetTouch(0);
 
-        //        float _touchPositionX = _touch.position.x / Screen.width;
+                float _touchPositionX = _touch.position.x / Screen.width;
 
-        //        if (_touchPositionX < leftZoneThreshold)
-        //        {
-        //            _horizontalInput = -1f;
-        //        }
-        //        else if (_touchPositionX > rightZoneThreshold)
-        //        {
-        //            _horizontalInput = 1f;
-        //        }
-        //    }
+                if (_touchPositionX < leftZoneThreshold)
+                {
+                    _horizontalInput = -1f;
+                }
+                else if (_touchPositionX > rightZoneThreshold)
+                {
+                    _horizontalInput = 1f;
+                }
+            }
 
-        //    return new Vector2(_horizontalInput, 0);
-        //}
-
-        return InputManager.Instance.InputActions.Player.Movement.ReadValue<Vector2>();
+            return new Vector2(_horizontalInput, 0);
+        }
     }
 }

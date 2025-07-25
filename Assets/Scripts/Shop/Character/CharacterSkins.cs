@@ -2,5 +2,6 @@ public enum CharacterSkins
 {
     Wing,
     Destroyer,
-    Fighter
+    Fighter,
+    Axolotl
 }

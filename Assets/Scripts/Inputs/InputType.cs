@@ -1,5 +1,5 @@
 public enum InputType
 {
-    Accelerometer,
-    Touch
+    Touch,
+    Accelerometer
 }

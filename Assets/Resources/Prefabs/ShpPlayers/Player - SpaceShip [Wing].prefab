@@ -272,6 +272,7 @@ MonoBehaviour:
     m_Bits: 64
   _dieEffect: {fileID: 6701809830210488493, guid: 86c637a6f285a1640b36a39972dd4c08,
     type: 3}
+  _dieSound: {fileID: 8300000, guid: cd0657bd448f2eb4984a89ebd1542da9, type: 3}
 --- !u!114 &-401912529029189533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bef9c28bf9a5142bba1016e46f3050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftZoneThreshold: 0.3
+  rightZoneThreshold: 0.7
 --- !u!1 &7306235966237158988
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,8 +5,7 @@ public class DiamondTrigger : MonoBehaviour
 {
     private GameplayResourceManager _gameplayResourceManager;
 
-    [SerializeField]
-    private UnityEvent _dieEvent;
+    [SerializeField] private AudioClip _pickSound;
 
     private void Start()
     {
@@ -18,7 +17,7 @@ public class DiamondTrigger : MonoBehaviour
         if (_other.gameObject.GetComponent<Player>())
         {
             _gameplayResourceManager.AddDiamond();
-            _dieEvent?.Invoke();
+            AllAudioSource.Instance.SoundAudioSource.PlayOneShot(_pickSound);
 
             Destroy(gameObject);
         }
